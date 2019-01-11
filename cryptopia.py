@@ -1,6 +1,6 @@
 ###############################################
 ##
-## Cryptopia version 1.0 CLI
+## Cryptopia version 1.1 CLI
 ## Author: atlantis
 ## GitHub: https://github.com/atlanntiss
 ## Cryptopia is a cryptologic tool, which

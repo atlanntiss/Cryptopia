@@ -43,7 +43,7 @@ def colorize_text(color, text):
 
 ## The main information about the project and the author's contacts.
 PROJECT_NAME = "Cryptopia"
-VERSION = "1.0 CLI"
+VERSION = "1.1 CLI"
 AUTHOR = "atlantis"
 
 DESCRIPTION = """Cryptopia is a cryptologic utility, which is going to help you to work
@@ -74,7 +74,7 @@ GitHub:\t{GITHUB}
 Email:\t{EMAIL}
 {delimiter}
 """
-INFO_TEXT = colorize_text("DATA", INFO_TEXT)
+INFO_TEXT = colorize_text("DATA", f"\n{INDENT}".join(INFO_TEXT.split("\n")))
 
 ## The settings of commands.
 
@@ -146,10 +146,24 @@ CRACKING = {
 HASHING = {
     "section_name": "HASHING",
     "functions": {
-        "md5": {
+        "md4": {
             # Every function has its mode, so we need to specify it.
             "hash_str": {
                 # These are input fields with arguments in the arrays below.
+                "text": {
+                    "function": "input_text",
+                    "arguments": [],
+                },
+            },
+            "hash_file": {
+                "file": {
+                    "function": "input_path",
+                    "arguments": ["the file whose checksum you want to find"],
+                },
+            },
+        },
+        "md5": {
+            "hash_str": {
                 "text": {
                     "function": "input_text",
                     "arguments": [],
@@ -256,7 +270,7 @@ SERVICE COMMANDS.
 {SERVICE_COMMANDS_OUTPUT}
 {delimiter}
 """
-HELP_TEXT = colorize_text("DATA", HELP_TEXT)
+HELP_TEXT = colorize_text("DATA", f"\n{INDENT}".join(HELP_TEXT.split("\n")))
 
 ## Headers.
 

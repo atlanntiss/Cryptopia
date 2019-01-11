@@ -6,7 +6,9 @@ Cryptopia is a cryptologic utility, which is going to help you to work with some
 - Caesar cipher (bruteforce cryptanalysis is available).
 
 **Hash functions:**
-- MD5 (available for strings and files).
+- MD4.
+- MD5.
+All the hash functions are available for strings and files.
 
 # Requirements.
 - Python 3.6 and some modules, written below.

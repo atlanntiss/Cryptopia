@@ -14,6 +14,33 @@ from os.path import getsize
 from modules.data_input import get_input_data
 from modules.config import ALL_FUNCTIONS, INDENT
 
+def md4(mode):
+    """
+    The MD4 function.
+    """
+
+    return get_hash("md4", mode, new=True)
+
+def md4_manual():
+    """
+    The function, which returns the 
+    MD5 hash function manual.
+    """
+
+    delimiter = "=" * 66
+    manual = f"""
+{delimiter}
+MD4 HASH FUNCTION MANUAL.
+{delimiter}
+The MD4 (message-digest 4 algorithm) is a 128-bit hash function,
+which was developed by Ronald Rivest in 1990.
+{delimiter}
+Security.
+The security level of MD4 is low. Full collision attacks may be
+performed against MD4."""
+    manual = f"\n{INDENT}".join(manual.split("\n"))
+    return manual
+
 def md5(mode):
     """
     The MD5 function.
@@ -43,12 +70,15 @@ secure to use this for hashing passwords at all."""
     manual = f"\n{INDENT}".join((manual.split("\n")))
     return manual
 
-def get_hash(hash_function, mode):
+def get_hash(hash_function, mode, new=False):
     """
     The main function for almost all the hashing functions.
     It was defined since almost all the hashing algorithms 
     in this program have the same pattern of the code.
     """
+
+    # We have an argument new since there are some functions
+    # executable only by hashlib.new(name).
 
     output_data = dict()
 
@@ -68,8 +98,15 @@ def get_hash(hash_function, mode):
         elif "file" in input_data:
             target = output_data["file"] = input_data["file"]
         
-        # Hashing.
-        result = getattr(hashlib, hash_function)()
+        ## Hashing.
+        
+        # Checking whether a function defined as a 
+        # "new" one or not in the hashlib module.
+        if new:
+            result = hashlib.new(hash_function)
+        else:
+            result = getattr(hashlib, hash_function)()
+
         if mode == "hash_str":
             result.update(target.encode("UTF-8"))
         elif mode == "hash_file":
