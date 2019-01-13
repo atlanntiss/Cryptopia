@@ -117,8 +117,8 @@ The Caesar cipher is one of the oldest and most popular ciphers
 in the history of mankind. Julius Caesar used this cipher to
 communicate with his generals. It is the simplest substitution 
 cipher. Each letter of a plaintext is shifted by some number
-called a shift. This shift (key) is a number between 0 and 
-length of an alphabet - 1.
+called a shift. This shift (key) is an integer between 0 and 26
+for English, which is the length of the alphabet.
 {delimiter}
 We have the mathematical model of the Caesar cipher:
 C = (P + K) mod N

@@ -8,6 +8,9 @@ Cryptopia is a cryptologic utility, which is going to help you to work with some
 **Hash functions:**
 - MD4.
 - MD5.
+- SHA1.
+- SHA224.
+
 All the hash functions are available for strings and files.
 
 # Requirements.

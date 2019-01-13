@@ -14,6 +14,8 @@ from os.path import getsize
 from modules.data_input import get_input_data
 from modules.config import ALL_FUNCTIONS, INDENT
 
+## MD4.
+
 def md4(mode):
     """
     The MD4 function.
@@ -36,10 +38,12 @@ The MD4 (message-digest 4 algorithm) is a 128-bit hash function,
 which was developed by Ronald Rivest in 1990.
 {delimiter}
 Security.
-The security level of MD4 is low. Full collision attacks may be
-performed against MD4."""
+The security level of the MD4 is low. Full collision attacks may
+be performed against this algorithm."""
     manual = f"\n{INDENT}".join(manual.split("\n"))
     return manual
+
+## MD5.
 
 def md5(mode):
     """
@@ -60,13 +64,68 @@ def md5_manual():
 MD5 HASH FUNCTION MANUAL.
 {delimiter}
 The MD5 (message-digest 5 algorithm) is a popular 128-bit hash
-function, which was developed by Ronald Rivest in 1991. The
-MD5 was widely used for hashing passwords in databases and
-verifying data integrity.
+function, which was developed by Ronald Rivest in 1991. The MD5
+was widely used for hashing passwords in databases and verifying
+data integrity.
 {delimiter}
 Security.
-The security level of MD5 was compromised, so now this is not
-secure to use this for hashing passwords at all."""
+The security level of the MD5 was compromised, so now this is not
+secure enough to use this for hashing passwords at all."""
+    manual = f"\n{INDENT}".join((manual.split("\n")))
+    return manual
+
+## SHA1.
+
+def sha1(mode):
+    """
+    The SHA1 function.
+    """
+
+    return get_hash("sha1", mode)
+
+def sha1_manual():
+    """
+    The function, which returns the 
+    SHA1 hash function manual.
+    """
+
+    delimiter = "=" * 66
+    manual = f"""
+{delimiter}
+SHA1 HASH FUNCTION MANUAL.
+{delimiter}
+The SHA1 (secure hash algorithm 1) is a 160-bit hash function,
+which was developed by the NSA and published in 1995.
+{delimiter}
+Security.
+The algorithm was not considered to be a hash function of high-level
+security. Also, it is possible to perform a collision attack against
+SHA1, so it was done by Google and CWI Amsterdam in 2017."""
+    manual = f"\n{INDENT}".join((manual.split("\n")))
+    return manual
+
+# SHA224.
+
+def sha224(mode):
+    """
+    The SHA224 function.
+    """
+
+    return get_hash("sha224", mode)
+
+def sha224_manual():
+    """
+    The function, which returns the 
+    SHA224 hash function manual.
+    """
+
+    delimiter = "=" * 66
+    manual = f"""
+{delimiter}
+SHA224 HASH FUNCTION MANUAL.
+{delimiter}
+The SHA224 (224 bit) is a part of the SHA2 hash functions set,
+which was developed by the NSA and published in 2001."""
     manual = f"\n{INDENT}".join((manual.split("\n")))
     return manual
 
