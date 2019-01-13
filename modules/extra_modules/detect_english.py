@@ -60,8 +60,9 @@ def english_word_probability(text):
 def is_english(text, word_percentage=20, letter_percentage=85):
     """
     Usually, 20% of the words in a string exists
-    in our dictionary. Also, by default, 85% of 
-    the characters in a string must be letters or spaces.
+    in our dictionary. Also, by default, 85% of
+    the characters in a string must be letters or
+    spaces.
     """
 
     words_match = (english_word_probability(text) * 100) >= word_percentage

@@ -88,7 +88,7 @@ def yes_or_no(question):
     
     # Handling incorrect input.
     if not y_or_n:
-        input_data["ERROR"] = "empty_input"
+        input_data["ERROR"] = "incorrect_input"
     else:
         if y_or_n not in ["y", "n"]:
             input_data["ERROR"] = "incorrect_input"

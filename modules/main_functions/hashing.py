@@ -13,6 +13,7 @@ from os.path import getsize
 # Modules of the project.
 from modules.data_input import get_input_data
 from modules.config import ALL_FUNCTIONS, INDENT
+from modules.extra_modules.crypto_math import random_string
 
 ## MD4.
 
@@ -104,7 +105,7 @@ SHA1, so it was done by Google and CWI Amsterdam in 2017."""
     manual = f"\n{INDENT}".join((manual.split("\n")))
     return manual
 
-# SHA224.
+## SHA224.
 
 def sha224(mode):
     """
@@ -125,6 +126,81 @@ def sha224_manual():
 SHA224 HASH FUNCTION MANUAL.
 {delimiter}
 The SHA224 (224 bit) is a part of the SHA2 hash functions set,
+which was developed by the NSA and published in 2001."""
+    manual = f"\n{INDENT}".join((manual.split("\n")))
+    return manual
+
+## SHA256.
+
+def sha256(mode):
+    """
+    The SHA256 function.
+    """
+
+    return get_hash("sha256", mode)
+
+def sha256_manual():
+    """
+    The function, which returns the 
+    SHA256 hash function manual.
+    """
+
+    delimiter = "=" * 66
+    manual = f"""
+{delimiter}
+SHA256 HASH FUNCTION MANUAL.
+{delimiter}
+The SHA256 (256 bit) is a part of the SHA2 hash functions set,
+which was developed by the NSA and published in 2001."""
+    manual = f"\n{INDENT}".join((manual.split("\n")))
+    return manual
+
+## SHA384.
+
+def sha384(mode):
+    """
+    The SHA384 function.
+    """
+
+    return get_hash("sha384", mode)
+
+def sha384_manual():
+    """
+    The function, which returns the 
+    SHA384 hash function manual.
+    """
+
+    delimiter = "=" * 66
+    manual = f"""
+{delimiter}
+SHA384 HASH FUNCTION MANUAL.
+{delimiter}
+The SHA384 (384 bit) is a part of the SHA2 hash functions set,
+which was developed by the NSA and published in 2001."""
+    manual = f"\n{INDENT}".join((manual.split("\n")))
+    return manual
+
+## SHA512.
+
+def sha512(mode):
+    """
+    The SHA512 function.
+    """
+
+    return get_hash("sha512", mode)
+
+def sha512_manual():
+    """
+    The function, which returns the 
+    SHA512 hash function manual.
+    """
+
+    delimiter = "=" * 66
+    manual = f"""
+{delimiter}
+SHA512 HASH FUNCTION MANUAL.
+{delimiter}
+The SHA512 (512 bit) is a part of the SHA2 hash functions set,
 which was developed by the NSA and published in 2001."""
     manual = f"\n{INDENT}".join((manual.split("\n")))
     return manual
@@ -168,6 +244,9 @@ def get_hash(hash_function, mode, new=False):
 
         if mode == "hash_str":
             result.update(target.encode("UTF-8"))
+            if input_data["salt_y_or_n"] == "y":
+                salt = output_data["salt"] = random_string(32)
+                result.update(salt.encode("UTF-8"))
         elif mode == "hash_file":
             with open(target, "rb") as file:
                 if (getsize(target) / 1024 / 1024) >= 1024:
