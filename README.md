@@ -13,6 +13,7 @@ Cryptopia is a cryptologic utility, which is going to help you to work with some
 - SHA256.
 - SHA384.
 - SHA512.
+- ripemd160.
 
 All the hash functions are available for strings and files. Also, there is the option for salting for every hash function.
 

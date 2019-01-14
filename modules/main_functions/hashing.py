@@ -205,6 +205,37 @@ which was developed by the NSA and published in 2001."""
     manual = f"\n{INDENT}".join((manual.split("\n")))
     return manual
 
+## Ripemd160.
+
+def ripemd160(mode):
+    """
+    The RIMEPD160 function.
+    """
+
+    return get_hash("ripemd160", mode, new=True)
+
+def ripemd160_manual():
+    """
+    The function, which returns the 
+    RIMEPD160 hash function manual.
+    """
+
+    delimiter = "=" * 66
+    manual = f"""
+{delimiter}
+RIPEMD160 HASH FUNCTION MANUAL.
+{delimiter}
+The RIPEMD160 (160 bit) is a part of the RIMEPD hash functions
+set, which was developed at the COSIC research group at the 
+Katholieke Universiteit Leuven in Belgium and published in 1996.
+The RIPEMD160 was created in contrast to the SHA1 and SHA2,
+designed by the NSA.
+{delimiter}
+Security.
+There were no any collisions reported to the RIPEMD160."""
+    manual = f"\n{INDENT}".join((manual.split("\n")))
+    return manual
+
 def get_hash(hash_function, mode, new=False):
     """
     The main function for almost all the hashing functions.

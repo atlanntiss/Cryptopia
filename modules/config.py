@@ -43,7 +43,7 @@ def colorize_text(color, text):
 
 ## The main information about the project and the author's contacts.
 PROJECT_NAME = "Cryptopia"
-VERSION = "1.3 CLI"
+VERSION = "1.4 CLI"
 AUTHOR = "atlantis"
 
 DESCRIPTION = """Cryptopia is a cryptologic utility, which is going to help you to work
@@ -257,6 +257,24 @@ HASHING = {
             },
         },
         "sha512": {
+            "hash_str": {
+                "text": {
+                    "function": "input_text",
+                    "arguments": [],
+                },
+                "salt_y_or_n": {
+                    "function": "yes_or_no",
+                    "arguments": ["Do you want to use a salt (suffixed), which was randomly generated?"],
+                },
+            },
+            "hash_file": {
+                "file": {
+                    "function": "input_path",
+                    "arguments": ["the file whose checksum you want to find"],
+                },
+            },
+        },
+        "ripemd160": {
             "hash_str": {
                 "text": {
                     "function": "input_text",
