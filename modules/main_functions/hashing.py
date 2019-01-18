@@ -236,6 +236,37 @@ There were no any collisions reported to the RIPEMD160."""
     manual = f"\n{INDENT}".join((manual.split("\n")))
     return manual
 
+## Whirlpool.
+
+def whirlpool(mode):
+    """
+    The Whirlpool function.
+    """
+
+    return get_hash("whirlpool", mode, new=True)
+
+def whirlpool_manual():
+    """
+    The function, which returns the 
+    Whirlpool hash function manual.
+    """
+
+    delimiter = "=" * 66
+    manual = f"""
+{delimiter}
+WHIRLPOOL HASH FUNCTION MANUAL.
+{delimiter}
+The Whirlpool is a 512-bit hash function, which was designed by
+Vincent Rijmen and Paulo S. L. M. Barreto. It was published in
+2000. The hash was accepted by the ISO, IEC, and recommended by
+the NESSIE project.
+{delimiter}
+Security.
+The function has hashsum size of 512 bits, which is essentially
+big magnitude."""
+    manual = f"\n{INDENT}".join((manual.split("\n")))
+    return manual
+
 def get_hash(hash_function, mode, new=False):
     """
     The main function for almost all the hashing functions.
@@ -243,7 +274,7 @@ def get_hash(hash_function, mode, new=False):
     in this program have the same pattern of the code.
     """
 
-    # We have an argument new since there are some functions
+    # We have the argument "new" since there are some functions
     # executable only by hashlib.new(name).
 
     output_data = dict()
@@ -276,7 +307,9 @@ def get_hash(hash_function, mode, new=False):
         if mode == "hash_str":
             result.update(target.encode("UTF-8"))
             if input_data["salt_y_or_n"] == "y":
-                salt = output_data["salt"] = random_string(32)
+                # The length of a salt must be equal to the digest
+                # size.
+                salt = output_data["salt"] = random_string(len(result.hexdigest()))
                 result.update(salt.encode("UTF-8"))
         elif mode == "hash_file":
             with open(target, "rb") as file:

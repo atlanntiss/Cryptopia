@@ -15,18 +15,14 @@ def random_string(length):
     secure system random method.
     """
 
-    if length > 1:
-        result = list()
-        for step in range(length):
-            # We do not need any spaces in a string, so we 
-            # do the process below to avoid them.
-            char = " "
-            while char in ["\n", "\t", "\v", "\b", "\r", " "]:
-                char = chr(ord(urandom(1)))
+    result = list()
+    for step in range(length):
+        # We do not need any spaces in a string, so we 
+        # do the process below to avoid them.
+        char = " "
+        while char in ["\n", "\t", "\v", "\b", "\r", "\a", "\f", " "]:
             # And also strip() just to make sure.
-            result.append(char.strip())
-        result = "".join(result)
-    elif length == 1:
-        result = chr(ord(urandom(length)))
-    
+            char = chr(ord(urandom(1))).strip()
+        result.append(char)
+    result = "".join(result)
     return result
