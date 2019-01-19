@@ -202,7 +202,111 @@ SHA512 HASH FUNCTION MANUAL.
 {delimiter}
 The SHA512 (512 bit) is a part of the SHA2 hash functions set,
 which was developed by the NSA and published in 2001."""
-    manual = f"\n{INDENT}".join((manual.split("\n")))
+    manual = f"\n{INDENT}".join(manual.split("\n"))
+    return manual
+
+## SHA3-224.
+
+def sha3_224(mode):
+    """
+    The SHA3-224 function.
+    """
+
+    return get_hash("sha3_224", mode)
+
+def sha3_224_manual():
+    """
+    The function, which returns the
+    SHA3-224 hash function manual.
+    """
+
+    delimiter = "=" * 66
+    manual = f"""
+{delimiter}
+SHA3-224 HASH FUNCTION MANUAL.
+{delimiter}
+The SHA3-224 (224 bit) is a part of the SHA3 hash functions set,
+which was developed by the NIST and first published in 2015. SHA3
+is the latest memeber of the SHA family."""
+    manual = f"\n{INDENT}".join(manual.split("\n"))
+    return manual
+
+## SHA3-256.
+
+def sha3_256(mode):
+    """
+    The SHA3-256 function.
+    """
+
+    return get_hash("sha3_256", mode)
+
+def sha3_256_manual():
+    """
+    The function, which returns the
+    SHA3-256 hash function manual.
+    """
+
+    delimiter = "=" * 66
+    manual = f"""
+{delimiter}
+SHA3-256 HASH FUNCTION MANUAL.
+{delimiter}
+The SHA3-256 (256 bit) is a part of the SHA3 hash functions set,
+which was developed by the NIST and first published in 2015. SHA3
+is the latest memeber of the SHA family."""
+    manual = f"\n{INDENT}".join(manual.split("\n"))
+    return manual
+
+## SHA3-384.
+
+def sha3_384(mode):
+    """
+    The SHA3-384 function.
+    """
+
+    return get_hash("sha3_384", mode)
+
+def sha3_384_manual():
+    """
+    The function, which returns the
+    SHA3-384 hash function manual.
+    """
+
+    delimiter = "=" * 66
+    manual = f"""
+{delimiter}
+SHA3-384 HASH FUNCTION MANUAL.
+{delimiter}
+The SHA3-384 (384 bit) is a part of the SHA3 hash functions set,
+which was developed by the NIST and first published in 2015. SHA3
+is the latest memeber of the SHA family."""
+    manual = f"\n{INDENT}".join(manual.split("\n"))
+    return manual
+
+## SHA3-512.
+
+def sha3_512(mode):
+    """
+    The SHA3-512 function.
+    """
+
+    return get_hash("sha3_512", mode)
+
+def sha3_512_manual():
+    """
+    The function, which returns the
+    SHA3-512 hash function manual.
+    """
+
+    delimiter = "=" * 66
+    manual = f"""
+{delimiter}
+SHA3-512 HASH FUNCTION MANUAL.
+{delimiter}
+The SHA3-512 (512 bit) is a part of the SHA3 hash functions set,
+which was developed by the NIST and first published in 2015. SHA3
+is the latest memeber of the SHA family."""
+    manual = f"\n{INDENT}".join(manual.split("\n"))
     return manual
 
 ## Ripemd160.

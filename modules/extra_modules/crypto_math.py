@@ -8,6 +8,7 @@
 
 ## Standard modules.
 from os import urandom
+from string import ascii_letters, punctuation, digits
 
 def random_string(length):
     """
@@ -20,7 +21,7 @@ def random_string(length):
         # We do not need any spaces in a string, so we 
         # do the process below to avoid them.
         char = " "
-        while char in ["\n", "\t", "\v", "\b", "\r", "\a", "\f", " "]:
+        while char not in (ascii_letters + punctuation + digits):
             # And also strip() just to make sure.
             char = chr(ord(urandom(1))).strip()
         result.append(char)
