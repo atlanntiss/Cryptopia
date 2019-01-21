@@ -43,7 +43,7 @@ def colorize_text(color, text):
 
 ## The main information about the project and the author's contacts.
 PROJECT_NAME = "Cryptopia"
-VERSION = "1.6 CLI"
+VERSION = "1.7 CLI"
 AUTHOR = "atlantis"
 
 DESCRIPTION = """Cryptopia is a cryptologic utility, which is going to help you to work
@@ -365,6 +365,42 @@ HASHING = {
             },
         },
         "whirlpool": {
+            "hash_str": {
+                "text": {
+                    "function": "input_text",
+                    "arguments": [],
+                },
+                "salt_y_or_n": {
+                    "function": "yes_or_no",
+                    "arguments": ["Do you want to use a salt (suffixed), which was randomly generated?"],
+                },
+            },
+            "hash_file": {
+                "file": {
+                    "function": "input_path",
+                    "arguments": ["the file whose checksum you want to find"],
+                },
+            },
+        },
+        "blake2b": {
+            "hash_str": {
+                "text": {
+                    "function": "input_text",
+                    "arguments": [],
+                },
+                "salt_y_or_n": {
+                    "function": "yes_or_no",
+                    "arguments": ["Do you want to use a salt (suffixed), which was randomly generated?"],
+                },
+            },
+            "hash_file": {
+                "file": {
+                    "function": "input_path",
+                    "arguments": ["the file whose checksum you want to find"],
+                },
+            },
+        },
+        "blake2s": {
             "hash_str": {
                 "text": {
                     "function": "input_text",

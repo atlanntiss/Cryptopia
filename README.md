@@ -13,6 +13,8 @@ Cryptopia is a cryptologic utility, which is going to help you to work with some
 - SHA256.
 - SHA384.
 - SHA512.
+- BLAKE2b.
+- BLAKE2s.
 - SHA3-224.
 - SHA3-256.
 - SHA3-384.

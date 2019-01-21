@@ -371,6 +371,67 @@ big magnitude."""
     manual = f"\n{INDENT}".join((manual.split("\n")))
     return manual
 
+## BLAKE2b.
+
+def blake2b(mode):
+    """
+    The BLAKE2b function.
+    """
+
+    return get_hash("blake2b", mode, new=True)
+
+def blake2b_manual():
+    """
+    The function, which returns the 
+    BLAKE2b hash function manual.
+    """
+
+    delimiter = "=" * 66
+    manual = f"""
+{delimiter}
+BLAKE2B HASH FUNCTION MANUAL.
+{delimiter}
+The BLAKE2b is a 512-bit hash function, which was developed
+by Jean-Philippe Aumasson, Luca Henzen, Willi Meier, and
+Raphael C.-W. Phan. It is a variant of the BLAKE2 algorithm.
+The BLAKE2b is faster than SHA-1, SHA-2, MD5, and SHA-3 on
+x64 and ARM architectures.
+{delimiter}
+Security.
+The security level of the BLAKE2 is better than the SHA-2
+and similar to the SHA-3.
+"""
+    manual = f"\n{INDENT}".join((manual.split("\n")))
+    return manual
+
+## BLAKE2s.
+
+def blake2s(mode):
+    """
+    The BLAKE2s function.
+    """
+
+    return get_hash("blake2s", mode, new=True)
+
+def blake2s_manual():
+    """
+    The function, which returns the 
+    BLAKE2s hash function manual.
+    """
+
+    delimiter = "=" * 66
+    manual = f"""
+{delimiter}
+BLAKE2S HASH FUNCTION MANUAL.
+{delimiter}
+The BLAKE2s is a 256-bit hash function, which was developed
+by Jean-Philippe Aumasson, Luca Henzen, Willi Meier, and
+Raphael C.-W. Phan. It is a variant of the BLAKE2 algorithm.
+The BLAKE2s is optimized for architectures such as 8 to 32
+bit platforms."""
+    manual = f"\n{INDENT}".join((manual.split("\n")))
+    return manual
+
 def get_hash(hash_function, mode, new=False):
     """
     The main function for almost all the hashing functions.
