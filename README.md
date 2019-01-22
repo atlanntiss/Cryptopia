@@ -21,6 +21,7 @@ Cryptopia is a cryptologic utility, which is going to help you to work with some
 - SHA3-512.
 - Ripemd160.
 - Whirlpool.
+- PBKDF2.
 
 All the hash functions are available for strings and files. Also, there is the option for salting for every hash function.
 

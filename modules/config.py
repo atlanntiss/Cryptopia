@@ -43,7 +43,7 @@ def colorize_text(color, text):
 
 ## The main information about the project and the author's contacts.
 PROJECT_NAME = "Cryptopia"
-VERSION = "1.7 CLI"
+VERSION = "1.8 CLI"
 AUTHOR = "atlantis"
 
 DESCRIPTION = """Cryptopia is a cryptologic utility, which is going to help you to work
@@ -415,6 +415,22 @@ HASHING = {
                 "file": {
                     "function": "input_path",
                     "arguments": ["the file whose checksum you want to find"],
+                },
+            },
+        },
+        "pbkdf2_hmac": {
+            "hash_str": {
+                "text": {
+                    "function": "input_text",
+                    "arguments": [],
+                },
+                "hash_function": {
+                    "function": "input_parameter",
+                    "arguments": ["a hash function you want to use (sha1/sha224/sha256/sha384/sha512)", str, range(0, 0), ["sha1", "sha224", "sha256", "sha384", "sha512"]],
+                },
+                "number_of_iterations": {
+                    "function": "input_parameter",
+                    "arguments": ["the number of iterations (10 000 <= integer <= 1 000 000)", int, range(10000, 1000001)],
                 },
             },
         },

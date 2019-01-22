@@ -29,7 +29,7 @@ def input_text():
     
     return input_data
 
-def input_parameter(parameter_name, data_type, number_range=range(0, 0)):
+def input_parameter(parameter_name, data_type, number_range=range(0, 0), str_listing=[]):
     """
     The input field for some parameter, which is usually 
     a key or number.
@@ -50,6 +50,14 @@ def input_parameter(parameter_name, data_type, number_range=range(0, 0)):
             # the condition will not be satisfied.
             if parameter in number_range:
                 input_data["data"] = parameter
+            else:
+                input_data["ERROR"] = "incorrect_input"
+        elif str_listing:
+            # If the list called str_listing (a list
+            # containing only strings) is empty, then
+            # the condition will not be satisfied.
+            if parameter.lower() in list(map(lambda string: string.lower(), str_listing)):
+                input_data["data"] = parameter.lower()
             else:
                 input_data["ERROR"] = "incorrect_input"
     

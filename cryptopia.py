@@ -1,6 +1,6 @@
 ###############################################
 ##
-## Cryptopia version 1.7 CLI
+## Cryptopia version 1.8 CLI
 ## Author: atlantis
 ## GitHub: https://github.com/atlanntiss
 ## Cryptopia is a cryptologic tool, which
@@ -128,7 +128,9 @@ class Interface:
         elif reason == "file_not_found":
             error_text = "the file was not found"
         elif reason == "keys_not_found":
-            error_text = "The cryptanalysis is failed - keys were not found"
+            error_text = "the cryptanalysis is failed - keys were not found"
+        elif reason == "not_supported":
+            error_text = "sorry, this is not supported here"
 
         return colorize_text("ERROR", f"{INDENT}[!] ERROR: {error_text}.")
     

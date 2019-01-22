@@ -9,6 +9,7 @@
 # Standard library modules.
 import hashlib
 from os.path import getsize
+from binascii import hexlify
 
 # Modules of the project.
 from modules.data_input import get_input_data
@@ -391,16 +392,15 @@ def blake2b_manual():
 {delimiter}
 BLAKE2B HASH FUNCTION MANUAL.
 {delimiter}
-The BLAKE2b is a 512-bit hash function, which was developed
-by Jean-Philippe Aumasson, Luca Henzen, Willi Meier, and
-Raphael C.-W. Phan. It is a variant of the BLAKE2 algorithm.
-The BLAKE2b is faster than SHA-1, SHA-2, MD5, and SHA-3 on
-x64 and ARM architectures.
+The BLAKE2b is a 512-bit hash function, which was developed by
+Jean-Philippe Aumasson, Luca Henzen, Willi Meier, and Raphael
+C. W. Phan. It is a variant of the BLAKE2 algorithm. The BLAKE2b
+is faster than SHA-1, SHA-2, MD5, and SHA-3 on x64 and ARM
+architectures.
 {delimiter}
 Security.
-The security level of the BLAKE2 is better than the SHA-2
-and similar to the SHA-3.
-"""
+The security level of the BLAKE2 is better than the SHA-2 and
+similar to the SHA-3."""
     manual = f"\n{INDENT}".join((manual.split("\n")))
     return manual
 
@@ -424,11 +424,64 @@ def blake2s_manual():
 {delimiter}
 BLAKE2S HASH FUNCTION MANUAL.
 {delimiter}
-The BLAKE2s is a 256-bit hash function, which was developed
-by Jean-Philippe Aumasson, Luca Henzen, Willi Meier, and
-Raphael C.-W. Phan. It is a variant of the BLAKE2 algorithm.
-The BLAKE2s is optimized for architectures such as 8 to 32
-bit platforms."""
+The BLAKE2s is a 256-bit hash function, which was developed by
+Jean-Philippe Aumasson, Luca Henzen, Willi Meier, and Raphael
+C. W. Phan. It is a variant of the BLAKE2 algorithm. The BLAKE2s
+is optimized for architectures such as 8 to 32 bit platforms."""
+    manual = f"\n{INDENT}".join((manual.split("\n")))
+    return manual
+
+## PBKDF2.
+
+def pbkdf2_hmac(mode):
+    """
+    The PBKDF2 function (a special one).
+    """
+
+    output_data = dict()
+
+    if mode == "hash_file":
+        output_data["ERROR"] = "not_supported"
+    elif mode == "man":
+        output_data["manual"] = globals()["pbkdf2_hmac_manual"]()
+    else:
+        # We are assuming here that the mode is hash_str.
+        # Getting all the data required to implement the PBKDF2 function.
+        input_data = get_input_data(ALL_FUNCTIONS["hashing"]["functions"]["pbkdf2_hmac"][mode])
+
+        if "ERROR" not in input_data:
+            salt = random_string(64)
+            output_data["text"] = input_data["text"]
+            output_data["hash function"] = input_data["hash_function"]
+            output_data["salt"] = salt
+            output_data["number of iterations"] = input_data["number_of_iterations"]
+            result = hashlib.pbkdf2_hmac(
+                input_data["hash_function"],
+                output_data["text"].encode("utf-8"),
+                salt.encode("utf-8"),
+                input_data["number_of_iterations"])
+            output_data["hash sum"] = hexlify(result).decode("utf-8")
+        else:
+            # Handling errors.
+            output_data["ERROR"] = input_data["ERROR"]
+    
+    return output_data
+
+def pbkdf2_hmac_manual():
+    """
+    The function, which returns the 
+    PBKDF2 function manual.
+    """
+
+    delimiter = "=" * 66
+    manual = f"""
+{delimiter}
+PBKDF2 FUNCTION MANUAL.
+{delimiter}
+The PBKDF2 (Password-Based Key Derivation Function 2) is a key
+derivation function, aimed to reduce the possibilities of
+successful brute force attacks. It applies HMAC - hash-based
+message authentication code."""
     manual = f"\n{INDENT}".join((manual.split("\n")))
     return manual
 
@@ -448,8 +501,7 @@ def get_hash(hash_function, mode, new=False):
         output_data["manual"] = globals()[hash_function + "_manual"]()
         return output_data
 
-    # Getting all the data required to implement the 
-    # Caesar cipher algorithm.
+    # Getting all the data required to implement a hash function.
     input_data = get_input_data(ALL_FUNCTIONS["hashing"]["functions"][hash_function][mode])
 
     if "ERROR" not in input_data:
