@@ -20,7 +20,7 @@ from modules.main_functions.hashing import *
 from modules.main_functions.crypto import *
 from modules.config import (PROJECT_NAME, VERSION, SERVICE_COMMANDS,
                             MAIN_COMMANDS, INDENT, INPUT_LABEL, HEADERS, 
-                            HELP_TEXT, INFO_TEXT, colorize_text)
+                            HELP_TEXT, INFO_TEXT, ERRORS, colorize_text)
 
 ## Third-party modules.
 from colorama import init as colors_init
@@ -119,20 +119,7 @@ class Interface:
         Returns an error message based on a specific reason.
         """
 
-        if reason == "cmd_not_found":
-            error_text = "command not found"
-        elif reason == "func_not_found":
-            error_text = "function not found"
-        elif reason == "incorrect_input":
-            error_text = "the input is incorrect"
-        elif reason == "file_not_found":
-            error_text = "the file was not found"
-        elif reason == "keys_not_found":
-            error_text = "the cryptanalysis is failed - keys were not found"
-        elif reason == "not_supported":
-            error_text = "sorry, this is not supported here"
-
-        return colorize_text("ERROR", f"{INDENT}[!] ERROR: {error_text}.")
+        return colorize_text("ERROR", f"{INDENT}[!] ERROR: {ERRORS[reason]}.")
     
     def quit(self):
         """

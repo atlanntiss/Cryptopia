@@ -470,6 +470,16 @@ MAIN_COMMANDS = {
     },
 }
 
+# All the program errors.
+ERRORS = {
+    "cmd_not_found": "command not found",
+    "func_not_found": "function not found",
+    "incorrect_input": "the input is incorrect",
+    "file_not_found": "the file was not found",
+    "keys_not_found": "the cryptanalysis is failed - keys were not found",
+    "not_supported": "sorry, this is not supported here",
+}
+
 ## Setting up the help text.
 
 # The text, which explains how to use commands.
