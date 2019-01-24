@@ -76,7 +76,7 @@ def input_path(target):
     
     # Handling incorrect input.
     if not path:
-        input_data["ERROR"] = "empty_input"
+        input_data["ERROR"] = "incorrect_input"
     else:
         if not isfile(path):
             input_data["ERROR"] = "file_not_found"
