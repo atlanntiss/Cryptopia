@@ -107,7 +107,7 @@ def yes_or_no(question):
 
 def get_input_data(input_fields):
     """
-    Collects input data, using array of the required 
+    Collects input data, using an array of the required 
     input fields.
     """
 

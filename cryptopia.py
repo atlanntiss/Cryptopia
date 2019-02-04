@@ -1,6 +1,6 @@
 ###############################################
 ##
-## Cryptopia version 1.8 CLI
+## Cryptopia version 1.9 CLI
 ## Author: atlantis
 ## GitHub: https://github.com/atlanntiss
 ## Cryptopia is a cryptologic tool, which
@@ -161,10 +161,10 @@ def main():
         cryptopia_cli = Interface()
     except KeyboardInterrupt:
         # Catching the CTRL+C hotkey.
-        print("\nKeyboard interrupt...")
+        print("\n\nKeyboard interrupt...")
     except Exception as error:
         # Catching any other unexpected exceptions.
-        print(error)
+        print(f"\nAn unexpected error: {error}.")
 
 if __name__ == "__main__":
     # If the app file was launched as the main file, the main 

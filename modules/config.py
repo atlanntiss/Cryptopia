@@ -43,7 +43,7 @@ def colorize_text(color, text):
 
 ## The main information about the project and the author's contacts.
 PROJECT_NAME = "Cryptopia"
-VERSION = "1.8 CLI"
+VERSION = "1.9 CLI"
 AUTHOR = "atlantis"
 
 DESCRIPTION = """Cryptopia is a cryptologic utility, which is going to help you to work
@@ -133,6 +133,29 @@ CIPHERS = {
                 None,
             },
         },
+        "transposition": {
+            "encrypt": {
+                "text": {
+                    "function": "input_text",
+                    "arguments": [],
+                },
+            },
+            "decrypt": {
+                "text": {
+                    "function": "input_text",
+                    "arguments": [],
+                },
+            },
+            "crack": {
+                "text": {
+                    "function": "input_text",
+                    "arguments": [],
+                },
+            },
+            "man": {
+                None,
+            },
+        },
     },
 }
 
@@ -140,6 +163,7 @@ CRACKING = {
     "section_name": "CRACKING",
     "functions": (
         "caesar",
+        "transposition",
     )
 }
 

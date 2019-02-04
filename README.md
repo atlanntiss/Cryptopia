@@ -4,6 +4,7 @@ Cryptopia is a cryptologic utility, which is going to help you to work with some
 ## The list of functions.
 ### Ciphers:
 - Caesar cipher (bruteforce cryptanalysis is available).
+- Transposition cipher (bruteforce cryptanalysis is available).
 
 ### Hash functions:
 - MD4.
@@ -22,10 +23,10 @@ Cryptopia is a cryptologic utility, which is going to help you to work with some
 - Ripemd160.
 - Whirlpool.
 
+All the hash functions are available for strings and files. Also, there is the option for salting for every hash function.
+
 ### Key derivation functions:
 - PBKDF2.
-
-All the hash functions are available for strings and files. Also, there is the option for salting for every hash function.
 
 # Requirements.
 - Python 3.6 and some modules, written below.
