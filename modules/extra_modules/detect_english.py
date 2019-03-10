@@ -37,7 +37,7 @@ def remove_non_letters(text, delete_spaces="no"):
         if delete_spaces == "no":
             if char in letters_and_space:
                 letters.append(char)
-        else:
+        elif delete_spaces == "yes":
             if char in ascii_letters:
                 letters.append(char)
     return "".join(letters)

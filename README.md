@@ -4,6 +4,7 @@ Cryptopia is a cryptologic utility, which is going to help you to work with some
 ## The list of functions.
 ### Ciphers:
 - Caesar cipher (bruteforce cryptanalysis is available).
+- Vigenere cipher (Kasiski examination attack is available).
 - Transposition cipher (bruteforce cryptanalysis is available).
 
 ### Hash functions:

@@ -43,7 +43,7 @@ def colorize_text(color, text):
 
 ## The main information about the project and the author's contacts.
 PROJECT_NAME = "Cryptopia"
-VERSION = "1.9 CLI"
+VERSION = "2.0 CLI"
 AUTHOR = "atlantis"
 
 DESCRIPTION = """Cryptopia is a cryptologic utility, which is going to help you to work
@@ -123,7 +123,7 @@ CIPHERS = {
                     "arguments": ["a key (0 < integer < 26)", int, range(1, 26)],
                 },
             },
-            "crack": {
+            "attack": {
                 "text": {
                     "function": "input_text",
                     "arguments": [],
@@ -146,7 +146,7 @@ CIPHERS = {
                     "arguments": [],
                 },
             },
-            "crack": {
+            "attack": {
                 "text": {
                     "function": "input_text",
                     "arguments": [],
@@ -156,14 +156,50 @@ CIPHERS = {
                 None,
             },
         },
+        "vigenere": {
+            "encrypt": {
+                "text": {
+                    "function": "input_text",
+                    "arguments": [],
+                },
+                "key": {
+                    "function": "input_parameter",
+                    "arguments": ["a key (some secret word)", str, range(0, 0), [], True],
+                },
+            },
+            "decrypt": {
+                "text": {
+                    "function": "input_parameter",
+                    "arguments": ["a key (some secret word)", str, range(0, 0), [], True],
+                },
+                "key": {
+                    "function": "input_text",
+                    "arguments": [],
+                },
+            },
+            "attack": {
+                "text": {
+                    "function": "input_text",
+                    "arguments": [],
+                },
+                "max_key_length": {
+                    "function": "input_parameter",
+                    "arguments": ["the maximum key length (2 <= integer <= 1024)", int, range(2, 1025)],
+                },
+            },
+            "man": {
+                None,
+            },
+        },
     },
 }
 
-CRACKING = {
-    "section_name": "CRACKING",
+CRYPTANALYSIS = {
+    "section_name": "CRYPTANALYSIS",
     "functions": (
         "caesar",
         "transposition",
+        "vigenere",
     )
 }
 
@@ -463,7 +499,7 @@ HASHING = {
 
 ALL_FUNCTIONS = {
     "ciphers": CIPHERS, 
-    "cracking": CRACKING, 
+    "cryptanalysis": CRYPTANALYSIS, 
     "hashing": HASHING,
 }
 
@@ -476,9 +512,9 @@ MAIN_COMMANDS = {
         "functions": CIPHERS["functions"],
         "description": f"works with {CIPHERS['section_name']} section (decryption)",
     },
-    "crack": {
-        "functions": CRACKING["functions"],
-        "description": f"works with {CRACKING['section_name']} section (cryptanalysis)",
+    "attack": {
+        "functions": CRYPTANALYSIS["functions"],
+        "description": f"works with {CRYPTANALYSIS['section_name']} section (cracking ciphers)",
     },
     "hash_str": {
         "functions": HASHING["functions"],
@@ -519,7 +555,7 @@ Examples of queries:
   info
   encrypt caesar
   clear
-  crack caesar"""
+  attack caesar"""
 
 # Preparing some lists of commands/functions to output.
 

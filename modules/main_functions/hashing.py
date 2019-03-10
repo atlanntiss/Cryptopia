@@ -100,9 +100,10 @@ The SHA1 (secure hash algorithm 1) is a 160-bit hash function,
 which was developed by the NSA and published in 1995.
 {delimiter}
 Security.
-The algorithm was not considered to be a hash function of high-level
-security. Also, it is possible to perform a collision attack against
-SHA1, so it was done by Google and CWI Amsterdam in 2017."""
+The algorithm was not considered to be a hash function of
+high-level security. Also, it is possible to perform a collision
+attack against SHA1, so it was done by Google and CWI Amsterdam in
+2017."""
     manual = f"\n{INDENT}".join((manual.split("\n")))
     return manual
 
@@ -331,10 +332,10 @@ def ripemd160_manual():
 RIPEMD160 HASH FUNCTION MANUAL.
 {delimiter}
 The RIPEMD160 (160 bit) is a part of the RIMEPD hash functions
-set, which was developed at the COSIC research group at the 
+set, which was developed at the COSIC research group at the
 Katholieke Universiteit Leuven in Belgium and published in 1996.
-The RIPEMD160 was created in contrast to the SHA1 and SHA2,
-designed by the NSA.
+The RIPEMD160 was created in contrast to the SHA1 and SHA2, which
+were designed by the NSA.
 {delimiter}
 Security.
 There were no any collisions reported to the RIPEMD160."""
@@ -480,7 +481,7 @@ PBKDF2 FUNCTION MANUAL.
 {delimiter}
 The PBKDF2 (Password-Based Key Derivation Function 2) is a key
 derivation function, aimed to reduce the possibilities of
-successful brute force attacks. It applies HMAC - hash-based
+successful bruteforce attacks. It applies HMAC - hash-based
 message authentication code."""
     manual = f"\n{INDENT}".join((manual.split("\n")))
     return manual
