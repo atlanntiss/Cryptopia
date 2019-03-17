@@ -12,7 +12,7 @@ from string import ascii_letters, punctuation, digits
 
 def random_string(length):
     """
-    Returns a random symbol, which was generated using the 
+    Returns a random string, which was generated using the 
     secure system random method.
     """
 

@@ -169,12 +169,12 @@ CIPHERS = {
             },
             "decrypt": {
                 "text": {
-                    "function": "input_parameter",
-                    "arguments": ["a key (some secret word)", str, range(0, 0), [], True],
-                },
-                "key": {
                     "function": "input_text",
                     "arguments": [],
+                },
+                "key": {
+                    "function": "input_parameter",
+                    "arguments": ["a key (some secret word)", str, range(0, 0), [], True],
                 },
             },
             "attack": {
