@@ -1,4 +1,4 @@
-# Cryptopia-CLI.
+# Cryptopia.
 
 Cryptopia is a cryptologic utility, which is going to help you to work with some encryption methods, explore interesting ciphers and hash functions, do cryptanalysis using common techniques of breaking cryptosystems, and have fun. Cryptopia is a beautiful and user-friendly tool made with love.
 
