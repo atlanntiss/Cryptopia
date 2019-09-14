@@ -55,7 +55,7 @@ will really like it.
 Good luck in use!"""
 
 GITHUB = "https://github.com/atlanntiss"
-EMAIL = "cryptofri3nd@tutanota.com"
+EMAIL = "whiteh4t@tutanota.com"
 
 # The text for the "info" command.
 delimiter = "=" * 73
