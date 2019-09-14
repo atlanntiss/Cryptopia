@@ -34,5 +34,5 @@ All the hash functions are available for strings and files. Also, there is the o
 
 # Requirements.
 
-- Python 3.6 and some modules, written below.
+- Python 3.6 and some modules, listed below.
   - colorama
