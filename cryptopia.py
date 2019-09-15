@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 ###############################################
 ##
 ## Cryptopia version 2.0 CLI
@@ -162,9 +164,9 @@ def main():
     except KeyboardInterrupt:
         # Catching the CTRL+C hotkey.
         print("\n\nKeyboard interrupt...")
-    #except Exception as error:
+    except Exception as error:
         # Catching any other unexpected exceptions.
-     #   print(f"\nAn unexpected error: {error}.")
+        print(f"\nAn unexpected error: {error}.")
 
 if __name__ == "__main__":
     # If the app file was launched as the main file, the main 
